@@ -4,6 +4,7 @@ import axios from 'axios';
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+    const url = './mascotas.json'
     const [mascotas, setMascotas] = useState([
     ]);
     const [loading, setLoading] = useState(true);
@@ -11,7 +12,7 @@ export const DataProvider = ({ children }) => {
 
     const getData = async () => {
         try {
-            const response = await axios.get(`${process.env.PUBLIC_URL}/mascotas.json`);
+            const response = await axios.get(url);
             setMascotas(response.data);
             console.log(mascotas)
         } catch (error) {
