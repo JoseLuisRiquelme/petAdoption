@@ -49,6 +49,27 @@ body {
     cursor: pointer;
 }
 
+/* MURO DE LA FAMA */
+.article__wall-container {    
+    background: var(--color-degradate);  
+}
+
+.wall__image-container {  
+    border: 2px solid gold;
+    background-color: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: -15px;
+}
+
+.adopted__image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-secondary);
+}
+
 
 @media (min-width: 493px) {
     .banner {            
