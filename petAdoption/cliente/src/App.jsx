@@ -12,7 +12,8 @@ import Register from './views/Register';
 function App() {
   
 
-  return (
+  return (  
+    
     <>
       <BrowserRouter>
       <Barra></Barra>

@@ -1,28 +1,30 @@
 import  { createContext, useEffect, useState, useContext } from "react";
 import axios from 'axios';
 
+
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+    const url = './mascotas.json'
     const [mascotas, setMascotas] = useState([
     ]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const getData = async () => {
+    const getData =async () => {
         try {
-            const response = await axios.get(`${process.env.PUBLIC_URL}/mascotas.json`);
-            setMascotas(response.data);
-            console.log(mascotas)
+          const response = await fetch('./mascotas.json');
+  
+          if (!response.ok) {
+            throw new Error('No se pudieron obtener los datos');
+          }
+  
+          const data = await response.json();
+          setMascotas(data);
         } catch (error) {
-            console.error('Error al obtener las mascotas:', error);
-            setError('Hubo un error al cargar las mascotas. Por favor, inténtalo de nuevo.');
-            console.log(error)
-        } finally {
-            setLoading(false);
+          console.error('Error al obtener datos:', error.message);
         }
-    };
-
+      }
     useEffect(() => {
         getData();
     }, []);

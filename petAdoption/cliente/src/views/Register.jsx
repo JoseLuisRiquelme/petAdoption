@@ -1,5 +1,13 @@
+import { useState } from "react";
+
 const Register = () => {
 
+    // Estados
+    const [username, setUsername] = useState("");
+    const [photo, setPhoto] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    
     return (
         
         <div className="container py-5">            
@@ -14,7 +22,9 @@ const Register = () => {
                             name="username"
                             placeholder="Username"
                             className="form__input rounded-full"
-                            autoComplete="off" />
+                            autoComplete="off"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)} />
                     </div>
 
                     {/* Fotografia */}
@@ -25,7 +35,9 @@ const Register = () => {
                             name="photo"
                             placeholder="Fotografía"
                             className="form__input rounded-full"
-                            autoComplete="off" />
+                            autoComplete="off"
+                            value={photo}
+                            onChange={(e) => setPhoto(e.target.value)} />
                     </div>
 
                     {/* Correo */}
@@ -36,7 +48,9 @@ const Register = () => {
                             name="email"
                             placeholder="Correo"
                             className="form__input rounded-full"
-                            autoComplete="off" />
+                            autoComplete="off"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)} />
                     </div>
 
                     {/* Contraseña */}
@@ -47,7 +61,9 @@ const Register = () => {
                             name="password"
                             placeholder="Contraseña"
                             className="form__input rounded-full"
-                            autoComplete="off" />
+                            autoComplete="off"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)} />
                     </div>
                 </div>
 
