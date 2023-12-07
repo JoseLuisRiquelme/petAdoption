@@ -9,10 +9,10 @@ const getMascotas = async () => {
     return mascotas;
 }
 
-const deleteMascota = async (itemId) => {
+const deleteMascota = async (mascotaId) => {
     try {
         const query = "Delete FROM mascotas WHERE id = $1";
-        const values = [itemId]
+        const values = [mascotaId]
         const result = await pool.query(query, values)
         return result;
     } catch (error) {
@@ -32,7 +32,7 @@ const postMascota = async (id_usuario, nombre, imagen, especie, descripcion, ciu
 
 const getUsuarioMascotas = async (id_user) => {
     try {
-        const query = "SELECT * from mascotas WHERE id_usuario = $1";
+        const query = "SELECT * from mascotas WHERE id_usuarios = $1";
         const values = [id_user];
         const { rows: userMascotas } = await pool.query(query, values);
         return userMascotas;

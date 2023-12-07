@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express();
+const router = express.Router();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const {getMascotas,deleteMascota,getUsuarioMascotas,postMascota,
@@ -49,7 +49,7 @@ router.put("/usuario/:userId/publicacion/:mascotaId", async (req, res) => {
     try {
         const {userId, mascotaId} = req.params;
         const {nombre, imagen, especie, descripcion, ciudad, sexo, edad} = req.body;
-        const edictMascota = putEditMascota(userId, mascotaId, nombre, imagen, especie, descripcion, ciudad, sexo, edad);
+        const edictMascota = await putEditMascota(userId, mascotaId, nombre, imagen, especie, descripcion, ciudad, sexo, edad);
         res.json({message: "mascota editada  correctamente" });
     } catch (error) {
         console.log(error)
@@ -79,7 +79,7 @@ router.post("/login", checkCredentialsMiddleware, async (req, res) => {
     }
 })
 
-router.get("/user", async (req, res) => {
+/*router.get("/user", async (req, res) => {
     try {
         const token = req.header("Authorization").split("Bearer ")[1];
         const { email } = jwt.decode(token);
@@ -92,7 +92,7 @@ router.get("/user", async (req, res) => {
     } catch (error) {
         res.status(500).send({ error: error.message });
     }
-});
+});*/
 
 router.post("/register", async (req, res) => {
     try {
