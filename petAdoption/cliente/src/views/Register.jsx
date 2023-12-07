@@ -13,7 +13,7 @@ const Register = () => {
         <div className="container py-5">            
             
             <form className="form__register md:px-10 lg:px-20 xl:px-96">
-                <div className="columns-1 bg-white p-3 mx-5 rounded">
+                <div className="columns-1 bg-white p-3 rounded">
                     {/* Username */}
                     <div className="form__group p-5 flex gap-2 align-middle">
                         <i className="fa-solid fa-user form__icon p-2 text-white rounded-full"></i>

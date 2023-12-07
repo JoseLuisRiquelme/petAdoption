@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    container: {
+    /*container: {
       center: true,
       padding: {
         DEFAULT: '1rem',
@@ -14,7 +14,7 @@ export default {
         xl: '5rem',
         '2xl': '6rem',
       },
-    },
+    },*/
   },
   plugins: [],
 }
