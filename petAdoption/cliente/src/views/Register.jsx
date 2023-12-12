@@ -10,7 +10,7 @@ const Register = () => {
     
     return (
         
-        <div className="container py-5">            
+        <div className="container p-5">            
             
             <form className="form__register md:px-10 lg:px-20 xl:px-96">
                 <div className="columns-1 bg-white p-3 rounded">
