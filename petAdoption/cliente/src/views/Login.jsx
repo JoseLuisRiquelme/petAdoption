@@ -1,19 +1,16 @@
 import { useState } from "react";
 import Banner from "../components/Banner"
 
-const Register = () => {
+const Login = () => {
 
     // Estados
     const [username, setUsername] = useState("");
-    const [photo, setPhoto] = useState("");
-    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     
     return (
         
-        <>      
-        
-        <Banner title="Crear Cuenta" />           
+        <>
+        <Banner title="Inicia Sesión" />     
 
         <div className="container">            
             
@@ -30,34 +27,9 @@ const Register = () => {
                             autoComplete="off"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)} />
-                    </div>
+                    </div>                   
 
-                    {/* Fotografia */}
-                    <div className="form__group">
-                        <i className="fa-solid fa-user form__icon"></i>
-                        <input 
-                            type="text"
-                            name="photo"
-                            placeholder="Fotografía"
-                            className="form__input"
-                            autoComplete="off"
-                            value={photo}
-                            onChange={(e) => setPhoto(e.target.value)} />
-                    </div>
-
-                    {/* Correo */}
-                    <div className="form__group">
-                        <i className="fa-solid fa-envelope form__icon "></i>
-                        <input 
-                            type="email"
-                            name="email"
-                            placeholder="Correo"
-                            className="form__input"
-                            autoComplete="off"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-
+                    
                     {/* Contraseña */}
                     <div className="form__group">
                         <i className="fa-solid fa-lock form__icon "></i>
@@ -72,12 +44,18 @@ const Register = () => {
                     </div>
                 </div>
 
-                {/* Botón de crear usuario */}
+                {/* Botón Inico de Sesión */}
                 <div className="container__button">
                     <input 
                         type="submit" 
-                        value={'Crear usuario'} 
+                        value={'Login'} 
                         className="form__button" />
+                </div>
+
+                {/* Enlaces de Recuperar cuenta */}
+                <div className="container__link">
+                    <a className="link" href="#">Recuperar contraseña</a>
+                    <a className="link" href="#">¿No tienes cuenta?</a>
                 </div>
             </form>            
             
@@ -87,4 +65,4 @@ const Register = () => {
     )
 }
 
-export default Register;
+export default Login;

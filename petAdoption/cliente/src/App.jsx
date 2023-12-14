@@ -7,6 +7,7 @@ import './App.css'
 import Home from './views/Home';
 import Perfil from './views/Perfil';
 import Register from './views/Register';
+import Login from './views/Login';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='/' element={<Home/>}/>
           <Route path='/Perfil' element={<Perfil/>}/>
           <Route path='/Registro' element={<Register/>}/>
+          <Route path='/Login' element={<Login/>}/>
         </Routes>
       </BrowserRouter>
     </>
