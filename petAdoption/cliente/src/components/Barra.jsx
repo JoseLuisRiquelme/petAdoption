@@ -22,7 +22,7 @@ const NavBar = () => {
             </NavLink>
             <NavLink to="/Registro">
               <Navbar.Brand className={({ isActive }) => (isActive ? "active" : undefined)} style={{ color: "white" }}> Registrar </Navbar.Brand>
-            </NavLink>
+            </NavLink>            
           </Nav>
         </Container>
       </Navbar>
